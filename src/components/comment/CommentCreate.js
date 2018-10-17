@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import AuthContext from '../auth/AuthContext';
+import APIURL from '../../helpers/environment';
 
 class CommentCreate extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class CommentCreate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/reviews`, {
+        fetch(`${APIURL}/reviews`, {
             method: 'POST',
             body: JSON.stringify({ reviews: this.state }),
             headers: new Headers({

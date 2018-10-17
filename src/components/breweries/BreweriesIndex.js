@@ -9,6 +9,7 @@ import TritonTable from './TritonTable';
 import AuthContext from '../auth/AuthContext';
 import { Container, Row, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 import './css/BreweriesIndex.css';
+import APIURL from '../../helpers/environment';
 
 class BreweriesIndex extends Component {
     constructor(props) {
@@ -85,7 +86,7 @@ class BreweriesIndex extends Component {
     }
 
     fetchFloyds = () => {
-        fetch("http://localhost:3000/floyds/beers", {
+        fetch(`${APIURL}/floyds/beers`, {
          method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -102,7 +103,7 @@ class BreweriesIndex extends Component {
     }
 
     fetchBlind = () => {
-            fetch("http://localhost:3000/blind/beers", {
+            fetch(`${APIURL}/blind/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -119,7 +120,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchBooks = () => {
-            fetch("http://localhost:3000/books/beers", {
+            fetch(`${APIURL}/books/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -136,7 +137,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchFour = () => {
-            fetch("http://localhost:3000/four/beers", {
+            fetch(`${APIURL}/four/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -153,7 +154,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchOaken = () => {
-            fetch("http://localhost:3000/oaken/beers", {
+            fetch(`${APIURL}/oaken/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -170,7 +171,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchSunking = () => {
-            fetch("http://localhost:3000/sunking/beers", {
+            fetch(`${APIURL}/sunking/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -187,7 +188,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchTriton = () => {
-            fetch("http://localhost:3000/triton/beers", {
+            fetch(`${APIURL}/triton/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
