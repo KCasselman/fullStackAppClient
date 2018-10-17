@@ -1,0 +1,34 @@
+/* light red: rgb(221, 26, 26)
+dark red: rgb(94, 14, 16)
+light grey: rgb(146, 149, 151)
+dark grey: rgb(30, 30, 30)
+white: rgb(255, 249, 249) */
+
+.tHead {
+    background-color: black;
+    color: rgb(255, 249, 249);
+    border: solid rgb(30, 30, 30);
+}
+
+.tBody {
+    background-color: rgb(146,149,151);
+    color: black;
+    font-weight: bold;
+}
+
+.table {
+    border: solid rgb(30, 30, 30);
+    box-shadow: 5px 5px 10px rgba(30, 30, 30, 0.699);
+}
+
+.tData {
+    border: solid rgb(30, 30, 30);
+}
+
+@media (max-width: 600px) {
+    .tableWrap {
+    margin-bottom: 100px;
+        
+    }
+}
+

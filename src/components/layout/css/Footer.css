@@ -1,0 +1,28 @@
+/* .wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+.footer {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(30,30,30);
+    position: absolute;
+} */
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(30, 30, 30);
+    text-align: center;
+    height: 50px;
+  }
+
+  #copy {
+      color: white;
+      text-align: center;
+      padding-top: 12.5px;
+  }

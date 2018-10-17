@@ -1,0 +1,32 @@
+.head {
+    background-image: url('../../../assets/barrels.jpg');
+    background-size: cover;
+    height: 780px;
+    opacity: 0.9;
+}
+
+#text {
+    color: white;
+    background-color: rgb(94,14,16);
+    font-size: 1.1rem;
+    margin: -65px -30px 0 -30px;
+}
+
+.wrapper {
+    background-color: rgb(30,30,30);
+}
+
+
+@media (max-width: 600px) {
+    .text {
+        font-size: 1rem
+    }
+}
+
+@media (max-width: 800px) {
+    .text {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin-top: -45px;
+    }
+}

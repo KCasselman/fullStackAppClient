@@ -1,0 +1,35 @@
+/* light red: rgb(221, 26, 26)
+dark red: rgb(94, 14, 16)
+light grey: rgb(146, 149, 151)
+dark grey: rgb(30, 30, 30)
+white: rgb(255, 249, 249) */
+
+.navBar {
+    background-color: rgb(30,30,30);
+}
+
+.bar {
+    background-image: url('../../../assets/woodBack.jpg');
+    background-size: cover;
+}
+
+.link {
+    border: solid black;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+a:link {
+    /* color: white; */
+    background-color: rgb(30,30,30);
+}
+
+a:visited {
+    /* color: white; */
+    background-color: rgb(30,30,30);
+}
+
+a:hover {
+    background-color: rgb(146,149,151);
+    border-radius: 5px;
+}
