@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import CommentCreate from './CommentCreate';
 import CommentTable from './CommentTable';
 import CommentEdit from './CommentEdit';
-import APIURL from '../../helpers/environment';
+// import APIURL from '../../helpers/environment';
 
 class CommentIndex extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class CommentIndex extends Component {
         }
 
     fetchComments = () => {
-        fetch(`${APIURL}/reviews`, {
+        fetch(`http://localhost:3000/reviews`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ class CommentIndex extends Component {
     
 
     commentDelete = (event) => {
-        fetch(`${APIURL}/reviews/${event.target.id}`, {
+        fetch(`http://localhost:3000/reviews/${event.target.id}`, {
             method: 'DELETE',
             body: JSON.stringify({ comments: { id: event.target.id } }),
             headers: new Headers({
@@ -50,7 +50,7 @@ class CommentIndex extends Component {
     }
 
     commentUpdate = (event, comments) => {
-        fetch(`${APIURL}/reviews/${comments.id}`, {
+        fetch(`http://localhost:3000/reviews/${comments.id}`, {
             method: 'PUT',
             body: JSON.stringify({ reviews: comments }),
             headers: new Headers({
