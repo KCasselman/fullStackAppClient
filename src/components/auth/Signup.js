@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import AuthContext from './AuthContext';
-import APIURL from '../../helpers/environment';
+import { APIURL } from '../../helpers/environment';
 
 class Signup extends Component {
     constructor(props) {
