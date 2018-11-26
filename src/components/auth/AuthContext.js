@@ -2,7 +2,7 @@ import React from 'react';
 
 const AuthContext = React.createContext({
     sessionToken: '',
-    setToken: () => {},
-});
+    setToken: () => {}
+})
 
 export default AuthContext;
