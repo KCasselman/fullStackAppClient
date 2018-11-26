@@ -14,9 +14,9 @@ import {
 class App extends Component {
   constructor() {
     super();
-    this.setToken = token => {
-      localStorage.setItem('token', token);
-      this.setState({ sessionToken: token });
+    this.setToken = sessionToken => {
+      localStorage.setItem('token', sessionToken);
+      this.setState({ sessionToken: sessionToken });
     };
     this.state = {
       sessionToken: '',
@@ -25,9 +25,9 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const token = localStorage.getItem('token');
-    if (token && !this.state.sessionToken) {
-      this.setState({ sessionToken: token });
+    const sessionToken = localStorage.getItem('token');
+    if (sessionToken && !this.state.sessionToken) {
+      this.setState({ sessionToken: sessionToken });
     }
   };
 
