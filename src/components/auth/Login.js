@@ -21,6 +21,7 @@ class Login extends Component {
     }
 
     handleSubmit = (event) => {
+        event.preventDefault();
         fetch(`${APIURL}/user/signin`, { //fetch request to the endpoint determined in app.js of server
             method: 'POST', //method of the fetch is a post
             body: JSON.stringify({
@@ -41,9 +42,8 @@ class Login extends Component {
         )
         .then(data => {
             this.props.auth.setToken(data.sessionToken) //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
-        })
-        event.preventDefault()
-    }
+        });
+    };
     
     render() {
         return(
