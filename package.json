@@ -32,10 +32,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "buildpacks": [
-    {
-      "url": "mars/create-react-app"
-    }
   ]
 }
