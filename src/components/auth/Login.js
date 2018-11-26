@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { AuthContext } from './AuthContext';
+import AuthContext from './AuthContext';
 import APIURL from '../../helpers/environment';
 
 class Login extends Component {
@@ -38,6 +38,7 @@ class Login extends Component {
             response => response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
         )
         .then(data => {
+            console.log(data);
             this.props.auth.setToken(data.sessionToken) //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
         });
     };
@@ -75,4 +76,4 @@ export default props => (
     <AuthContext.Consumer>
         {auth => <Login {...props} auth={auth}/>}
     </AuthContext.Consumer>
-)
+);
