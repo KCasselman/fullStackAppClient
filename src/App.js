@@ -13,15 +13,15 @@ import {
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.setToken = token => {
       localStorage.setItem('token', token);
       this.setState({ sessionToken: token });
-    }
+    };
     this.state = {
       sessionToken: '',
       setToken: this.setToken
-    }
+    };
   }
 
   componentWillMount() {
@@ -29,32 +29,31 @@ class App extends Component {
     if (token && !this.state.sessionToken) {
       this.setState({ sessionToken: token });
     }
-  }
+  };
 
   logout = () => {
     this.setState({
       sessionToken: '',
     });
     localStorage.clear();
-  }
+  };
 
-  // protectedViews = () => {
-  //   if (this.state.sessionToken === localStorage.getItem('token')) {
-  //     return <Header clickLogout={this.logout}/>
-  //   } else {
-  //     return <Auth />
-  //   }
-  // }
+  protectedViews = () => {
+    if (this.state.sessionToken === localStorage.getItem('token')) {
+      return <Header clickLogout={this.logout}/>
+    } else {
+      return <Auth />
+    }
+  };
 
   render() { //lifecycle method which is a feature of component
     return( //can only return 1 thing in 1 single div
       <Router>
         <AuthContext.Provider value={this.state}>
-        <Header clickLogout={this.logout}/>
-        {/* <div className="App"> */}
-          {/* {this.protectedViews()} */}
+        <div className="App">
+          {this.protectedViews()}
           <Footer />
-        {/* </div> */}
+        </div>
         </AuthContext.Provider>
       </Router>
     );
