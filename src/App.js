@@ -14,8 +14,8 @@ import {
 class App extends Component {
   constructor() {
     super()
-    this.setToken = (token) => {
-      localStorage.setItem('token', token);
+    this.setToken = (sessionToken) => {
+      localStorage.setItem('token', sessionToken);
       this.setState({ sessionToken: token });
     }
     this.state = {
