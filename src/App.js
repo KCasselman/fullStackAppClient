@@ -16,7 +16,7 @@ class App extends Component {
     super()
     this.setToken = (sessionToken) => {
       localStorage.setItem('token', sessionToken);
-      this.setState({ sessionToken: token });
+      this.setState({ sessionToken: sessionToken });
     }
     this.state = {
       sessionToken: '',
