@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
 import './css/Auth.css';
+import AuthContext from './AuthContext';
 
 class Auth extends Component {
     constructor(props) {
