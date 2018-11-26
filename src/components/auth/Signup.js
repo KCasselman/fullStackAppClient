@@ -7,8 +7,8 @@ class Signup extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: '',
-            lastName: '',
+            firstname: '',
+            lastname: '',
             email: '',
             password: '',
         };
@@ -30,8 +30,8 @@ class Signup extends Component {
             
         })
         .then(
-            (response) => {response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
-            })
+            (response) => response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
+            )
         .then((data) => {
             this.props.auth.setToken(data.sessionToken) //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
         })
@@ -46,12 +46,12 @@ class Signup extends Component {
                 <h6>Please create an account to access information about local breweries.<br />Your password must be at least 6 characters long.<br/><br/></h6>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label for="firstName">First Name</Label>
-                        <Input id="su_firstName" type="text" pattern=".{1,}" name="firstName" placeholder="enter first name" onChange={this.handleChange}></Input>
+                        <Label for="firstname">First Name</Label>
+                        <Input id="su_firstname" type="text" pattern=".{1,}" name="firstname" placeholder="enter first name" onChange={this.handleChange}></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="lastName">Last Name</Label>
-                        <Input id="su_lastName" type="text" pattern=".{1,}" name="lastName" placeholder="enter last name" onChange={this.handleChange}></Input>
+                        <Label for="lastname">Last Name</Label>
+                        <Input id="su_lastname" type="text" pattern=".{1,}" name="lastname" placeholder="enter last name" onChange={this.handleChange}></Input>
                     </FormGroup>
                     <FormGroup>
                         <Label for="email">Email</Label>
