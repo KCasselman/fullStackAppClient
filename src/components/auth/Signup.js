@@ -24,9 +24,9 @@ class Signup extends Component {
         fetch(`${APIURL}/user/createuser`, { //fetch request to the endpoint determined in app.js of server
             method: 'POST', //method of the fetch is a post
             body: JSON.stringify({user: this.state}), //setting state to user(user correlates to usercontroller.js of server)
-            headers: {
+            headers: new Headers({
                 'Content-Type': 'application/json' //tells server what type of info we are sending to it
-            }, 
+            }), 
             
         })
         .then(

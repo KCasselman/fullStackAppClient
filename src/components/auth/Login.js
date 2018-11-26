@@ -7,8 +7,8 @@ class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstname: '',
-            lastname: '',
+            firstName: '',
+            lastName: '',
             email: '',
             password: ''
         };
@@ -45,12 +45,12 @@ class Login extends Component {
                 <h6>Please login to access information about local breweries.<br /><br/><br/></h6>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label for="firstname">First Name</Label>
-                        <Input id="li_firstname" type="text" pattern=".{1,}" name="firstname" placeholder="enter first name" onChange={this.handleChange}></Input>
+                        <Label for="firstName">First Name</Label>
+                        <Input id="li_firstName" type="text" pattern=".{1,}" name="firstName" placeholder="enter first name" onChange={this.handleChange}></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="lastname">Last Name</Label>
-                        <Input id="li_lastname" type="text" pattern=".{1,}" name="lastname" placeholder="enter last name" onChange={this.handleChange}></Input>
+                        <Label for="lastName">Last Name</Label>
+                        <Input id="li_lastName" type="text" pattern=".{1,}" name="lastName" placeholder="enter last name" onChange={this.handleChange}></Input>
                     </FormGroup>
                     <FormGroup>
                         <Label for="email">Email</Label>
