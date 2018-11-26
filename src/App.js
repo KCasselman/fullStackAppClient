@@ -14,9 +14,9 @@ import {
 class App extends Component {
   constructor() {
     super()
-    this.setToken = (sessionToken) => {
-      localStorage.setItem('token', sessionToken);
-      this.setState({ sessionToken: sessionToken });
+    this.setToken = token => {
+      localStorage.setItem('token', token);
+      this.setState({ sessionToken: token });
     }
     this.state = {
       sessionToken: '',
@@ -31,11 +31,6 @@ class App extends Component {
     }
   }
 
-  setSessionState = (token) => {
-    localStorage.setItem('token', token);
-    this.setState({ sessionToken: token });
-  }
-
   logout = () => {
     this.setState({
       sessionToken: '',
@@ -43,22 +38,23 @@ class App extends Component {
     localStorage.clear();
   }
 
-  protectedViews = () => {
-    if (this.state.sessionToken === localStorage.getItem('token')) {
-      return <Header clickLogout={this.logout}/>
-    } else {
-      return <Auth />
-    }
-  }
+  // protectedViews = () => {
+  //   if (this.state.sessionToken === localStorage.getItem('token')) {
+  //     return <Header clickLogout={this.logout}/>
+  //   } else {
+  //     return <Auth />
+  //   }
+  // }
 
   render() { //lifecycle method which is a feature of component
     return( //can only return 1 thing in 1 single div
       <Router>
         <AuthContext.Provider value={this.state}>
-        <div className="App">
-          {this.protectedViews()}
+        <Header clickLogout={this.logout}/>
+        {/* <div className="App"> */}
+          {/* {this.protectedViews()} */}
           <Footer />
-        </div>
+        {/* </div> */}
         </AuthContext.Provider>
       </Router>
     );
