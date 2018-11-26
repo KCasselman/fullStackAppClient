@@ -26,13 +26,13 @@ class Signup extends Component {
             body: JSON.stringify({user: this.state}), //setting state to user(user correlates to usercontroller.js of server)
             headers: new Headers({
                 'Content-Type': 'application/json' //tells server what type of info we are sending to it
-            }), 
+            })
             
         })
         .then(
             response => response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
             )
-        .then((data) => {
+        .then(data => {
             this.props.auth.setToken(data.sessionToken) //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
         })
         event.preventDefault()
