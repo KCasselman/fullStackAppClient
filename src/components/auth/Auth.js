@@ -1,28 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
 import './css/Auth.css';
 
-const Auth = (props) => {
-    return(
-        <div>
-            <h1>Welcome to Best Brews Indy!</h1>
-            <Container className="auth-container">
-                <Row>
-                    <Col md="6">
-                        <Signup />
-                    </Col>
-                    <Col med="6" className="login-col">
-                        <Login />
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    )
+class Auth extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render(){
+        return(
+            <div>
+                <h1>Welcome to Best Brews Indy!</h1>
+                <Container className="auth-container">
+                    <Row>
+                        <Col md="6">
+                            <Signup />
+                        </Col>
+                        <Col med="6" className="login-col">
+                            <Login />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
 }
 
-export default Auth;
+export default props => (
+    <AuthContext.Consumer>
+        {auth => <Auth {...props} auth={auth}/>}
+    </AuthContext.Consumer>
+);
 
 /* <div>
             <form>
