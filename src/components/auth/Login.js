@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import AuthContext from './AuthContext';
+import { AuthContext } from './AuthContext';
 import APIURL from '../../helpers/environment';
 
 class Login extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             firstName: '',
             lastName: '',
@@ -25,12 +25,9 @@ class Login extends Component {
         fetch(`${APIURL}/user/signin`, { //fetch request to the endpoint determined in app.js of server
             method: 'POST', //method of the fetch is a post
             body: JSON.stringify({
-                user: {
-                 firstName: this.state.firstName,
-                 lastName: this.state.lastName,
-                 email: this.state.email,
-                 password: this.state.password
-                }
+                user: 
+                 this.state
+                
                 }), //setting state to user(user correlates to usercontroller.js of server)
             headers: new Headers({
                 'Content-Type': 'application/json', //tells server what type of info we are sending to it
