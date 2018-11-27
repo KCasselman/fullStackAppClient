@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Footer from './components/layout/Footer';
-import Header from './components/layout/Header';
+import SiteBar from './components/layout/Header';
 import Auth from './components/auth/Auth';
 import AuthContext from '../src/components/auth/AuthContext';
 import {
@@ -38,21 +38,21 @@ class App extends Component {
     localStorage.clear();
   };
 
-  // protectedViews = () => {
-  //   if (this.state.sessionToken === localStorage.getItem('token')) {
-  //     return <Header clickLogout={this.logout}/>
-  //   } else {
-  //     return <Auth />
-  //   }
-  // };
+  protectedViews = () => {
+    if (this.state.sessionToken === localStorage.getItem('token')) {
+      return <SiteBar clickLogout={this.logout}/>
+    } else {
+      return <Auth />
+    }
+  };
 
   render() { //lifecycle method which is a feature of component
     return( //can only return 1 thing in 1 single div
       <Router>
         <AuthContext.Provider value={this.state}>
         <div className="App">
-          {/* {this.protectedViews()} */}
-          <Header clickLogout={this.logout}/>
+          {this.protectedViews()}
+          {/* <Header clickLogout={this.logout}/> */}
           <Footer />
         </div>
         </AuthContext.Provider>

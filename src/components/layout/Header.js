@@ -4,7 +4,6 @@ import BreweriesIndex from '../breweries/BreweriesIndex';
 import CommentIndex from '../comment/CommentIndex';
 import Home from '../layout/Home';
 import Logo from '../../assets/NewEditedLogo.jpg';
-import Auth from '../auth/Auth';
 import AuthContext from '../auth/AuthContext';
 import {
   Collapse,
@@ -15,7 +14,7 @@ import {
   NavItem,
   NavLink,
   Button,
-  Container
+  Media
 } from 'reactstrap';
 import { Switch, Route } from 'react-router-dom';
 
@@ -32,14 +31,6 @@ class SiteBar extends Component {
         isOpen: !this.state.isOpen
       });
     }
-
-    protectedViews = () => {
-      if (this.props.auth.sessionToken === localStorage.getItem("sessionToken")){
-        return <Home />
-      } else {
-        return <Auth />
-      }
-    };
 
     render(){
       return(
@@ -70,7 +61,21 @@ class SiteBar extends Component {
               </Nav>
             </Collapse>
           </Navbar>
-          <Container>{this.protectedViews()}</Container>
+          {/* <Navbar color="dark" light expand="md">
+            <NavbarBrand href="/">Project Client Side</NavbarBrand>
+            <NavbarToggler onClick={this.toggle}/>
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <Button>About Us</Button>
+                  <Button>Breweries</Button>
+                  <Button>Contact</Button>
+                  <Button>Favorites</Button>
+                  <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar> */}
           </div>
           {/*My navbar sets which route i see below
           */}
@@ -86,11 +91,11 @@ class SiteBar extends Component {
       }
   }
   
-  export default props => (
-    <AuthContext.Consumer>
-      {auth => <SiteBar {...props} auth={auth} />}
-    </AuthContext.Consumer>
-  );
+export default props => (
+  <AuthContext.Consumer>
+    {auth => <SiteBar {...props} auth={auth} />}
+  </AuthContext.Consumer>
+);
 
 
 
