@@ -4,7 +4,6 @@ import BreweriesIndex from '../breweries/BreweriesIndex';
 import CommentIndex from '../comment/CommentIndex';
 import Home from '../layout/Home';
 import Logo from '../../assets/NewEditedLogo.jpg';
-import AuthContext from '../auth/AuthContext';
 import {
   Collapse,
   Navbar,
@@ -91,11 +90,7 @@ class SiteBar extends Component {
       }
   }
   
-export default props => (
-  <AuthContext.Consumer>
-    {auth => <SiteBar {...props} auth={auth} />}
-  </AuthContext.Consumer>
-);
+export default SiteBar;
 
 
 

@@ -52,7 +52,6 @@ class App extends Component {
         <AuthContext.Provider value={this.state}>
         <div className="App">
           {this.protectedViews()}
-          {/* <Header clickLogout={this.logout}/> */}
           <Footer />
         </div>
         </AuthContext.Provider>
