@@ -31,6 +31,14 @@ class SiteBar extends Component {
       });
     }
 
+    protectedViews = () => {
+      if (this.props.auth.sessionToken === localStorage.getItem("sessionToken")){
+        return <Route exact path="/" component={ Home } />
+      } else {
+        return <Route exact path="/" component={ Auth } />
+      }
+    };
+
     render(){
       return(
         <div>
@@ -60,21 +68,7 @@ class SiteBar extends Component {
               </Nav>
             </Collapse>
           </Navbar>
-          {/* <Navbar color="dark" light expand="md">
-            <NavbarBrand href="/">Project Client Side</NavbarBrand>
-            <NavbarToggler onClick={this.toggle}/>
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <Button>About Us</Button>
-                  <Button>Breweries</Button>
-                  <Button>Contact</Button>
-                  <Button>Favorites</Button>
-                  <Button onClick={() => this.props.clickLogout()}>Logout</Button>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar> */}
+          <Container>{this.protectedViews()}</Container>
           </div>
           {/*My navbar sets which route i see below
           */}
@@ -90,7 +84,11 @@ class SiteBar extends Component {
       }
   }
   
-export default SiteBar;
+  export default props => (
+    <AuthContext.Consumer>
+      {auth => <Header {...props} auth={auth} />}
+    </AuthContext.Consumer>
+  );
 
 
 

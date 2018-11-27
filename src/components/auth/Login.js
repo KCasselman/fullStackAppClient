@@ -40,7 +40,7 @@ class Login extends Component {
         )
         .then(data => {
             console.log(data);
-            this.props.auth.setToken(data.sessionToken) //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
+            this.props.auth.setToken(data.sessionToken); //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
         });
     };
     
