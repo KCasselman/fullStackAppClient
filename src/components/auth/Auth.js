@@ -16,10 +16,10 @@ class Auth extends Component {
                 <Container className="auth-container">
                     <Row>
                         <Col md="6">
-                            <Signup setToken={props.setToken}/>
+                            <Signup />
                         </Col>
                         <Col med="6" className="login-col">
-                            <Login setToken={props.setToken}/>
+                            <Login />
                         </Col>
                     </Row>
                 </Container>
