@@ -4,6 +4,8 @@ import BreweriesIndex from '../breweries/BreweriesIndex';
 import CommentIndex from '../comment/CommentIndex';
 import Home from '../layout/Home';
 import Logo from '../../assets/NewEditedLogo.jpg';
+import Auth from '../auth/Auth';
+import AuthContext from '../auth/AuthContext';
 import {
   Collapse,
   Navbar,
@@ -13,7 +15,7 @@ import {
   NavItem,
   NavLink,
   Button,
-  Media
+  Container
 } from 'reactstrap';
 import { Switch, Route } from 'react-router-dom';
 
@@ -86,7 +88,7 @@ class SiteBar extends Component {
   
   export default props => (
     <AuthContext.Consumer>
-      {auth => <Header {...props} auth={auth} />}
+      {auth => <SiteBar {...props} auth={auth} />}
     </AuthContext.Consumer>
   );
 
