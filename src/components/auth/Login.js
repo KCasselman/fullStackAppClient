@@ -21,6 +21,7 @@ class Login extends Component {
     }
 
     handleSubmit = (event) => {
+        console.log(this.state)
         event.preventDefault();
         fetch(`${APIURL}/user/signin`, { //fetch request to the endpoint determined in app.js of server
             method: 'POST', //method of the fetch is a post
