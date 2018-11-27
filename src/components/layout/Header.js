@@ -35,9 +35,9 @@ class SiteBar extends Component {
 
     protectedViews = () => {
       if (this.props.auth.sessionToken === localStorage.getItem("sessionToken")){
-        return <Route exact path="/" component={ Home } />
+        return <Home />
       } else {
-        return <Route exact path="/" component={ Auth } />
+        return <Auth />
       }
     };
 
