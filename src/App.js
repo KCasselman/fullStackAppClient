@@ -43,22 +43,22 @@ class App extends Component {
     localStorage.clear();
   };
 
-  // protectedViews = () => {
-  //   if (this.state.sessionToken === localStorage.getItem('sessionToken')) {
-  //     return <SiteBar clickLogout={this.logout}/>
-  //   } else {
-  //     return <Auth />
-  //   }
-  // };
+  protectedViews = () => {
+    if (this.state.sessionToken === localStorage.getItem('token')) {
+      return <SiteBar clickLogout={this.logout}/>
+    } else {
+      return <Auth setToken={this.setSessionState}/>
+    }
+  };
 
   render() { //lifecycle method which is a feature of component
     return( //can only return 1 thing in 1 single div
       <Router>
         {/* <AuthContext.Provider value={this.state}> */}
         <div className="App">
-          <SiteBar clickLogout={this.logout}/>
-          <Auth setToken={this.setSessionState}/>
-          {/* {this.protectedViews()} */}
+          {/* <SiteBar clickLogout={this.logout}/> */}
+          {/* <Auth setToken={this.setSessionState}/> */}
+          {this.protectedViews()}
           <Footer />
         </div>
         {/* </AuthContext.Provider> */}
