@@ -22,7 +22,7 @@ class CommentCreate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/reviews`, {
+        fetch(`https://kec-beerapp.herokuapp.com/reviews`, {
             method: 'POST',
             body: JSON.stringify({ reviews: this.state }),
             headers: new Headers({

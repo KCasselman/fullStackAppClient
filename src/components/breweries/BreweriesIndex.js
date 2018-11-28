@@ -86,7 +86,7 @@ class BreweriesIndex extends Component {
     }
 
     fetchFloyds = () => {
-        fetch(`http://localhost:3000/floyds/beers`, {
+        fetch(`https://kec-beerapp.herokuapp.com/floyds/beers`, {
          method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ class BreweriesIndex extends Component {
     }
 
     fetchBlind = () => {
-            fetch(`http://localhost:3000/blind/beers`, {
+            fetch(`https://kec-beerapp.herokuapp.com/blind/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchBooks = () => {
-            fetch(`http://localhost:3000/books/beers`, {
+            fetch(`https://kec-beerapp.herokuapp.com/books/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchFour = () => {
-            fetch(`http://localhost:3000/four/beers`, {
+            fetch(`https://kec-beerapp.herokuapp.com/four/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchOaken = () => {
-            fetch(`http://localhost:3000/oaken/beers`, {
+            fetch(`https://kec-beerapp.herokuapp.com/oaken/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -171,7 +171,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchSunking = () => {
-            fetch(`http://localhost:3000/sunking/beers`, {
+            fetch(`https://kec-beerapp.herokuapp.com/sunking/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchTriton = () => {
-            fetch(`http://localhost:3000/triton/beers`, {
+            fetch(`https://kec-beerapp.herokuapp.com/triton/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
