@@ -6,7 +6,7 @@ import FourTable from './FourTable';
 import OakenTable from './OakenTable';
 import SunkingTable from './SunkingTable';
 import TritonTable from './TritonTable';
-import AuthContext from '../auth/AuthContext';
+// import AuthContext from '../auth/AuthContext';
 import { Container, Row, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 import './css/BreweriesIndex.css';
 // import APIURL from '../../helpers/environment';
@@ -255,8 +255,9 @@ class BreweriesIndex extends Component {
     }
 }
 
-export default props => (
-    <AuthContext.Consumer>
-      {auth => <BreweriesIndex {...props} auth={auth} />}
-    </AuthContext.Consumer>
-  );
+export default BreweriesIndex;
+// props => (
+//     <AuthContext.Consumer>
+//       {auth => <BreweriesIndex {...props} auth={auth} />}
+//     </AuthContext.Consumer>
+//   );

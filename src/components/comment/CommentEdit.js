@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
-import AuthContext from '../auth/AuthContext';
+// import AuthContext from '../auth/AuthContext';
 
 class CommentEdit extends React.Component {
     constructor(props) {
@@ -71,8 +71,9 @@ class CommentEdit extends React.Component {
     }
 }
 
-export default props => (
-    <AuthContext.Consumer>
-      {auth => <CommentEdit {...props} auth={auth} />}
-    </AuthContext.Consumer>
-  );
+export default CommentEdit;
+// props => (
+//     <AuthContext.Consumer>
+//       {auth => <CommentEdit {...props} auth={auth} />}
+//     </AuthContext.Consumer>
+//   );
