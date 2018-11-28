@@ -20,7 +20,7 @@ class App extends Component {
     // };
     this.state = {
       sessionToken: '',
-      setToken: this.setToken
+      // setToken: this.setToken
     };
   }
 
