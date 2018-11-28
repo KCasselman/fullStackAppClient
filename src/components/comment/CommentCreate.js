@@ -27,7 +27,7 @@ class CommentCreate extends Component {
             body: JSON.stringify({ reviews: this.state }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.auth.sessionToken
+                'Authorization': this.props.sessionToken
             })
         })
         .then((res) => res.json())

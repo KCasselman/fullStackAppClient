@@ -25,7 +25,7 @@ class CommentIndex extends Component {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.auth.sessionToken
+                'Authorization': this.props.sessionToken
             })
         })
             .then(response => response.json())
@@ -42,7 +42,7 @@ class CommentIndex extends Component {
             body: JSON.stringify({ comments: { id: event.target.id } }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.auth.sessionToken
+                'Authorization': this.props.sessionToken
             })
         })
         .then(
@@ -55,7 +55,7 @@ class CommentIndex extends Component {
             body: JSON.stringify({ reviews: comments }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': this.props.auth.sessionToken
+                'Authorization': this.props.sessionToken
             })
         })
         .then((res) => {
@@ -103,52 +103,3 @@ class CommentIndex extends Component {
 }
 
 export default CommentIndex;
-// props => (
-//     <AuthContext.Consumer>
-//       {auth => <CommentIndex {...props} auth={auth} />}
-//     </AuthContext.Consumer>
-//   );
-
-// class CommentIndex extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             favorites: []
-//         }
-//     }
-
-//     fetchFavorites = () => {
-//         fetch('http://localhost:3000/favorite', {
-//             method: 'GET',
-//             headers: new Headers({
-//                 'Content-Type': 'application/json',
-//                 'Authorization': this.props.token
-//             })
-//         })
-//         .then(
-//         res => res.json())
-//         .then(
-//         logData => {
-//             return this.setState({ favorites: logData })
-//         })
-//     }
-
-//     componentDidMount() {
-//         this.fetchFavorites()
-//     }
-
-//     render() {
-//         return(
-//             <Container>
-//                 <Row>
-//                     <Col md="3">
-                    
-//                     </Col>
-//                     <Col md="9">
-//                         <h2>Log your favorite beers to see this table will be added in the upcoming modules</h2>
-//                     </Col>
-//                 </Row>
-//             </Container>
-//         )
-//     }
-// }

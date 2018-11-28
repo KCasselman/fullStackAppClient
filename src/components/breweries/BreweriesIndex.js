@@ -90,7 +90,7 @@ class BreweriesIndex extends Component {
          method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': this.props.auth.sessionToken
+                'Authorization': this.props.sessionToken
             }
         })
         .then(
@@ -107,7 +107,7 @@ class BreweriesIndex extends Component {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': this.props.auth.sessionToken
+                    'Authorization': this.props.sessionToken
                 })
             })
             .then(
@@ -124,7 +124,7 @@ class BreweriesIndex extends Component {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': this.props.auth.sessionToken
+                    'Authorization': this.props.sessionToken
                 })
             })
             .then(
@@ -141,7 +141,7 @@ class BreweriesIndex extends Component {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': this.props.auth.sessionToken
+                    'Authorization': this.props.sessionToken
                 })
             })
             .then(
@@ -158,7 +158,7 @@ class BreweriesIndex extends Component {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': this.props.auth.sessionToken
+                    'Authorization': this.props.sessionToken
                 })
             })
             .then(
@@ -175,7 +175,7 @@ class BreweriesIndex extends Component {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': this.props.auth.sessionToken
+                    'Authorization': this.props.sessionToken
                 })
             })
             .then(
@@ -192,7 +192,7 @@ class BreweriesIndex extends Component {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': this.props.auth.sessionToken
+                    'Authorization': this.props.sessionToken
                 })
             })
             .then(
