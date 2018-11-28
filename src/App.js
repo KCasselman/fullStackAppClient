@@ -25,15 +25,15 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const token = localStorage.getItem('token');
-    if (token && !this.state.sessionToken) {
-      this.setState({ sessionToken: token });
+    const sessionToken = localStorage.getItem('token');
+    if (sessionToken && !this.state.sessionToken) {
+      this.setState({ sessionToken: sessionToken });
     }
   };
 
-  setSessionState = (token) => {
-    localStorage.setItem('token', token);
-    this.setState({ sessionToken: token });
+  setSessionState = (sessionToken) => {
+    localStorage.setItem('token', sessionToken);
+    this.setState({ sessionToken: sessionToken });
   }
 
   logout = () => {
