@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './components/layout/Footer';
 import SiteBar from './components/layout/Header';
 import Auth from './components/auth/Auth';
-import AuthContext from '../src/components/auth/AuthContext';
+// import AuthContext from '../src/components/auth/AuthContext';
 import {
   BrowserRouter as Router,
   Route,
@@ -14,10 +14,10 @@ import {
 class App extends Component {
   constructor() {
     super();
-    this.setToken = sessionToken => {
-      localStorage.setItem('sessionToken', sessionToken);
-      this.setState({ sessionToken: sessionToken });
-    };
+    // this.setToken = sessionToken => {
+    //   localStorage.setItem('sessionToken', sessionToken);
+    //   this.setState({ sessionToken: sessionToken });
+    // };
     this.state = {
       sessionToken: '',
       setToken: this.setToken
@@ -25,11 +25,16 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const sessionToken = localStorage.getItem('sessionToken');
-    if (sessionToken && !this.state.sessionToken) {
-      this.setState({ sessionToken: sessionToken });
+    const token = localStorage.getItem('token');
+    if (token && !this.state.sessionToken) {
+      this.setState({ sessionToken: token });
     }
   };
+
+  setSessionState = (token) => {
+    localStorage.setItem('token', token);
+    this.setState({ sessionToken: token });
+  }
 
   logout = () => {
     this.setState({
@@ -38,23 +43,25 @@ class App extends Component {
     localStorage.clear();
   };
 
-  protectedViews = () => {
-    if (this.state.sessionToken === localStorage.getItem('sessionToken')) {
-      return <SiteBar clickLogout={this.logout}/>
-    } else {
-      return <Auth />
-    }
-  };
+  // protectedViews = () => {
+  //   if (this.state.sessionToken === localStorage.getItem('sessionToken')) {
+  //     return <SiteBar clickLogout={this.logout}/>
+  //   } else {
+  //     return <Auth />
+  //   }
+  // };
 
   render() { //lifecycle method which is a feature of component
     return( //can only return 1 thing in 1 single div
       <Router>
-        <AuthContext.Provider value={this.state}>
+        {/* <AuthContext.Provider value={this.state}> */}
         <div className="App">
-          {this.protectedViews()}
+          <SiteBar clickLogout={this.logout}/>
+          <Auth setToken={this.setSessionState}/>
+          {/* {this.protectedViews()} */}
           <Footer />
         </div>
-        </AuthContext.Provider>
+        {/* </AuthContext.Provider> */}
       </Router>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import AuthContext from './AuthContext';
+// import AuthContext from './AuthContext';
 import APIURL from '../../helpers/environment';
 
 class Login extends Component {
@@ -40,7 +40,7 @@ class Login extends Component {
         )
         .then(data => {
             console.log(data);
-            this.props.auth.setToken(data.sessionToken); //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
+            this.props.setToken(data.sessionToken); //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
         });
     };
     
@@ -73,8 +73,9 @@ class Login extends Component {
     }
 }
 
-export default props => (
-    <AuthContext.Consumer>
-        {auth => <Login {...props} auth={auth}/>}
-    </AuthContext.Consumer>
-);
+export default Login;
+// props => (
+//     <AuthContext.Consumer>
+//         {auth => <Login {...props} auth={auth}/>}
+//     </AuthContext.Consumer>
+// );

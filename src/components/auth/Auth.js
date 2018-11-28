@@ -3,36 +3,37 @@ import { Container, Row, Col } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
 import './css/Auth.css';
-import AuthContext from './AuthContext';
+// import AuthContext from './AuthContext';
 
-class Auth extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render(){
+const Auth = (props) => {
+    // constructor(props) {
+    //     super(props);
+    // }
+    // render(){
         return(
             <div>
                 <h1>Welcome to Best Brews Indy!</h1>
                 <Container className="auth-container">
                     <Row>
                         <Col md="6">
-                            <Signup />
+                            <Signup setToken={props.setToken}/>
                         </Col>
                         <Col med="6" className="login-col">
-                            <Login />
+                            <Login setToken={props.setToken}/>
                         </Col>
                     </Row>
                 </Container>
             </div>
         );
     }
-}
+// }
 
-export default props => (
-    <AuthContext.Consumer>
-        {auth => <Auth {...props} auth={auth}/>}
-    </AuthContext.Consumer>
-);
+export default Auth;
+// props => (
+//     <AuthContext.Consumer>
+//         {auth => <Auth {...props} auth={auth}/>}
+//     </AuthContext.Consumer>
+// );
 
 /* <div>
             <form>

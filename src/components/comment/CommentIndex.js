@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AuthContext from '../auth/AuthContext';
+// import AuthContext from '../auth/AuthContext';
 import { Container, Row, Col } from 'reactstrap';
 import CommentCreate from './CommentCreate';
 import CommentTable from './CommentTable';
@@ -102,11 +102,12 @@ class CommentIndex extends Component {
     }
 }
 
-export default props => (
-    <AuthContext.Consumer>
-      {auth => <CommentIndex {...props} auth={auth} />}
-    </AuthContext.Consumer>
-  );
+export default CommentIndex;
+// props => (
+//     <AuthContext.Consumer>
+//       {auth => <CommentIndex {...props} auth={auth} />}
+//     </AuthContext.Consumer>
+//   );
 
 // class CommentIndex extends Component {
 //     constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import AuthContext from '../auth/AuthContext';
+// import AuthContext from '../auth/AuthContext';
 // import APIURL from '../../helpers/environment';
 
 class CommentCreate extends Component {
@@ -76,8 +76,9 @@ class CommentCreate extends Component {
     }
 }
 
-export default props => (
-    <AuthContext.Consumer>
-      {auth => <CommentCreate {...props} auth={auth} />}
-    </AuthContext.Consumer>
-  );
+export default CommentCreate;
+// props => (
+//     <AuthContext.Consumer>
+//       {auth => <CommentCreate {...props} auth={auth} />}
+//     </AuthContext.Consumer>
+//   );

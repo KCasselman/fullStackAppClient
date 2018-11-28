@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
 import './css/Comment.css';
-import AuthContext from '../auth/AuthContext';
+// import AuthContext from '../auth/AuthContext';
 
 const CommentTable = (props) => {
     return(
@@ -43,9 +43,10 @@ const CommentTable = (props) => {
     );
 }
 
-export default props => (
-    <AuthContext.Consumer>
-      {auth => <CommentTable {...props} auth={auth} />}
-    </AuthContext.Consumer>
-  );
+export default CommentTable;
+//  props => (
+//     <AuthContext.Consumer>
+//       {auth => <CommentTable {...props} auth={auth} />}
+//     </AuthContext.Consumer>
+//   );
     
