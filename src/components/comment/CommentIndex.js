@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import CommentCreate from './CommentCreate';
 import CommentTable from './CommentTable';
 import CommentEdit from './CommentEdit';
-// import APIURL from '../../helpers/environment';
+import APIURL from '../../helpers/environment';
 
 class CommentIndex extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class CommentIndex extends Component {
         }
 
     fetchComments = () => {
-        fetch(`https://kec-beerapp.herokuapp.com/reviews`, {
+        fetch(`${APIURL}/reviews`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

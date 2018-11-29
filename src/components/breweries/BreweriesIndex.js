@@ -9,7 +9,7 @@ import TritonTable from './TritonTable';
 // import AuthContext from '../auth/AuthContext';
 import { Container, Row, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 import './css/BreweriesIndex.css';
-// import APIURL from '../../helpers/environment';
+import APIURL from '../../helpers/environment';
 
 class BreweriesIndex extends Component {
     constructor(props) {
@@ -86,7 +86,7 @@ class BreweriesIndex extends Component {
     }
 
     fetchFloyds = () => {
-        fetch(`https://kec-beerapp.herokuapp.com/floyds/beers`, {
+        fetch(`${APIURL}/floyds/beers`, {
          method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ class BreweriesIndex extends Component {
     }
 
     fetchBlind = () => {
-            fetch(`https://kec-beerapp.herokuapp.com/blind/beers`, {
+            fetch(`${APIURL}/blind/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchBooks = () => {
-            fetch(`https://kec-beerapp.herokuapp.com/books/beers`, {
+            fetch(`${APIURL}/books/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchFour = () => {
-            fetch(`https://kec-beerapp.herokuapp.com/four/beers`, {
+            fetch(`${APIURL}/four/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchOaken = () => {
-            fetch(`https://kec-beerapp.herokuapp.com/oaken/beers`, {
+            fetch(`${APIURL}/oaken/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -171,7 +171,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchSunking = () => {
-            fetch(`https://kec-beerapp.herokuapp.com/sunking/beers`, {
+            fetch(`${APIURL}/sunking/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ class BreweriesIndex extends Component {
         }
 
         fetchTriton = () => {
-            fetch(`https://kec-beerapp.herokuapp.com/triton/beers`, {
+            fetch(`${APIURL}/triton/beers`, {
              method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
