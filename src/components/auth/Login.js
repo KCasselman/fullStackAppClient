@@ -32,7 +32,7 @@ class Login extends Component {
             
         })
         .then(
-            (response) => response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
+            (response) => console.log(response),response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
         )
         .then((data) => {
             console.log(data);

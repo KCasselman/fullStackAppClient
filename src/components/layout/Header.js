@@ -82,7 +82,7 @@ class SiteBar extends Component {
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route exact path="/breweries"><BreweriesIndex /></Route>
-            <Route exact path="/reviews"><CommentIndex setToken={props.setToken}/></Route>
+            <Route exact path="/reviews"><CommentIndex /></Route>
           </Switch>
           </div>
         </div>
