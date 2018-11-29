@@ -32,10 +32,10 @@ class Login extends Component {
             
         })
         .then(
-            response => console.log(response.json()) //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
+            response => response.json() //resolving the promise from fetch and calling .json(), allowing us to turn the response into JSON when it resolves
         )
-        .then((data) => {
-            console.log(data);
+        .then(data => {
+            console.log(data.sessionToken);
             this.props.setToken(data.sessionToken); //resolving the .json promise, and taking the data we get back from the server and then calling our setToken function with the sessionToken we get back in the data object
         });
     };
