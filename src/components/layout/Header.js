@@ -38,9 +38,9 @@ class SiteBar extends Component {
           <div className="navBar">
           <Navbar dark className="bar" expand="md">
             <NavbarBrand href="/" >
-            <a className="logoFloat" href="/"> {/*Change href to home page*/}
+            <NavItem className="logoFloat" href="/"> {/*Change href to home page*/}
                <img className="logo" src={Logo} alt={Logo} style={{ height: 100, width: 125 }}/>
-            </a>
+            </NavItem>
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle}/>
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -82,7 +82,7 @@ class SiteBar extends Component {
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route exact path="/breweries"><BreweriesIndex /></Route>
-            <Route exact path="/reviews"><CommentIndex /></Route>
+            <Route exact path="/reviews"><CommentIndex sessionToken={this.props.sessionToken}/></Route>
           </Switch>
           </div>
         </div>

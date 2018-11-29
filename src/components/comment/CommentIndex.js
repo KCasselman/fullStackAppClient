@@ -28,16 +28,15 @@ class CommentIndex extends Component {
                 'Authorization': this.props.sessionToken
             })
         })
-            .then(response => response.json())
-            .then(
-                (logData) => {
+        .then(response => response.json())
+        .then((logData) => {
                 return this.setState({ comments: logData })
             })
     }
     
 
     commentDelete = (event) => {
-        fetch(`https://kec-beerapp.herokuapp.com/reviews/${event.target.id}`, {
+        fetch(`${APIURL}/reviews/${event.target.id}`, {
             method: 'DELETE',
             body: JSON.stringify({ comments: { id: event.target.id } }),
             headers: new Headers({
@@ -50,7 +49,7 @@ class CommentIndex extends Component {
     }
 
     commentUpdate = (event, comments) => {
-        fetch(`https://kec-beerapp.herokuapp.com/reviews/${comments.id}`, {
+        fetch(`${APIURL}/reviews/${comments.id}`, {
             method: 'PUT',
             body: JSON.stringify({ reviews: comments }),
             headers: new Headers({
@@ -84,7 +83,7 @@ class CommentIndex extends Component {
                 <Container>
                     <Row>
                         <Col md="3">
-                            <CommentCreate updateCommentsArray={this.fetchComments}/>
+                            <CommentCreate sessionToken={this.props.sessionToken} updateCommentsArray={this.fetchComments}/>
                         </Col>
                         <Col md="9">
                             {comments}
