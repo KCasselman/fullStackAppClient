@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const sessionToken = localStorage.getItem('token');
+    const sessionToken = localStorage.getItem('sessionToken');
     if (sessionToken && !this.state.sessionToken) {
       this.setState({ sessionToken: sessionToken });
     }
@@ -44,8 +44,8 @@ class App extends Component {
   };
 
   protectedViews = () => {
-    if (this.state.sessionToken === localStorage.getItem('token')) {
-      return <SiteBar clickLogout={this.logout}/>
+    if (this.state.sessionToken === localStorage.getItem('sessionToken')) {
+      return <SiteBar clickLogout={this.logout} setToken={this.setSessionState}/>
     } else {
       return <Auth setToken={this.setSessionState}/>
     }
