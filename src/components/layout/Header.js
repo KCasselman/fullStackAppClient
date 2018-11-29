@@ -81,7 +81,7 @@ class SiteBar extends Component {
           <div>
           <Switch>
             <Route exact path="/"><Home /></Route>
-            <Route exact path="/breweries"><BreweriesIndex sessionToken={this.props.sessionToken}/></Route>
+            <Route exact path="/breweries"><BreweriesIndex /></Route>
             <Route exact path="/reviews"><CommentIndex sessionToken={this.props.sessionToken}/></Route>
           </Switch>
           </div>

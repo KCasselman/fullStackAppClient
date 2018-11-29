@@ -3,8 +3,8 @@ import { Table, Button } from 'reactstrap';
 import './css/Tables.css';
 
 class BlindTable extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state={}
     }
 
