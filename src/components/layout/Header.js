@@ -39,7 +39,7 @@ class SiteBar extends Component {
           <Navbar dark className="bar" expand="md">
             <NavbarBrand href="/" >
             <NavItem className="logoFloat" href="/"> {/*Change href to home page*/}
-               <img className="logo" src={Logo} alt={Logo} style={{ height: 100, width: 125 }}/>
+               <img className="logo" src={Logo} alt={Logo}/>
             </NavItem>
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle}/>

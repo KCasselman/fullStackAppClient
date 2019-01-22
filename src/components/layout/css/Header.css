@@ -13,6 +13,16 @@ white: rgb(255, 249, 249) */
     background-size: cover;
 }
 
+.logo {
+    height: 100px;
+    width: 150px;
+    margin-left: -30px;
+}
+
+.logo:hover {
+    box-shadow: 0px 1px 10px rgb(192, 28, 28);
+}
+
 .link {
     border: solid black;
     border-radius: 5px;
@@ -20,12 +30,10 @@ white: rgb(255, 249, 249) */
 }
 
 a:link {
-    /* color: white; */
     background-color: rgb(30,30,30);
 }
 
 a:visited {
-    /* color: white; */
     background-color: rgb(30,30,30);
 }
 

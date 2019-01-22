@@ -12,7 +12,7 @@ const Auth = (props) => {
     // render(){
         return(
             <div>
-                <h1>Welcome to Best Brews Indy!</h1>
+                <h1 className="welcome">Welcome to Best Brews Indy!</h1>
                 <Container className="auth-container">
                     <Row>
                         <Col md="6">

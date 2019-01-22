@@ -5,11 +5,11 @@ import './css/Comment.css';
 
 const CommentTable = (props) => {
     return(
-        <div>
+        <div className="commentTableWrap">
             <h3>Comment History</h3>
             <hr />
-            <Table striped>
-                <thead>
+            <Table striped className="commentTable">
+                <thead className="commentTHead">
                     <tr>
                         <th>#</th>
                         <th>Brewery</th>
@@ -18,18 +18,18 @@ const CommentTable = (props) => {
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="commentTBody">
                 {
                     props.comments.map((comments, id) => {
                         return(
                             <tr key={id}>
-                                <th scope="row">{comments.id}</th>
-                                <td>{comments.brewery}</td>
-                                <td>{comments.beerName}</td>
-                                <td>{comments.comment}</td>
-                                <td>
-                                    <Button id={comments.id} onClick={props.delete}>Delete</Button>
-                                    <Button id={comments.id} onClick={e => props.update(e, comments)}>Update</Button>
+                                <th className="commentTData" scope="row">{comments.id}</th>
+                                <td className="commentTData">{comments.brewery}</td>
+                                <td className="commentTData">{comments.beerName}</td>
+                                <td className="commentTData">{comments.comment}</td>
+                                <td className="commentTData">
+                                    <Button className="deleteButton" id={comments.id} onClick={props.delete}>Delete</Button>
+                                    <Button className="updateButton" id={comments.id} onClick={e => props.update(e, comments)}>Update</Button>
                                 </td>
                             </tr>
                         )
